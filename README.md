@@ -42,7 +42,7 @@ remotePort = 6060
 ...
 user_list=['fh21','akin','admin']  
 token = "admin.."      #token,添加IP白名单时需要
-DENYNUM = 10   #
+DENYNUM = 10   #限制数
 ...
 
 #更详细请查看官网文档说明

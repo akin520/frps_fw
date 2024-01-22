@@ -14,7 +14,7 @@ app = Flask(__name__)
 
 user_list=['fh21','akin','admin']  #用户白名单列表
 token = "admin.."  #添加白名单的时候需要
-DENYNUM = 10
+DENYNUM = 10  #限制数
 
 def writelog(msg):
     f = open("/tmp/frps_post.log","a+")
@@ -85,9 +85,10 @@ def fw():
         token_str = request.args.get("token")
         ip_str = request.args.get("ip", None)
         op_str = request.args.get("op", None)
-        print(token_str)
+        key_str = request.args.get("key", "frps_allow_hash")
+        print(token_str,ip_str,op_str,key_str)
         if token_str == token and ip_str and op_str:
-            r = hashop(ip_str, "frps_deny_hash", op=op_str)
+            r = hashop(ip_str, key_str, op=op_str)
             return json.dumps({"msg":r}, ensure_ascii=False), 200
         else:
             return json.dumps({"msg":"op or ip error"}, ensure_ascii=False), 200
