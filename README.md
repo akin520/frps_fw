@@ -42,8 +42,19 @@ remotePort = 6060
 ...
 user_list=['fh21','akin','admin']  
 token = "admin.."      #token,添加IP白名单时需要
-NUM = 10   #
+DENYNUM = 10   #
 ...
 
 #更详细请查看官网文档说明
+```
+
+## 安装
+
+```shell
+pip install -r requirements.txt
+python frps_fw.py 
+ * Running on http://0.0.0.0:8082/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 336-837-330 
 ```
